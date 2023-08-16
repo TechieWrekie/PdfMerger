@@ -16,7 +16,7 @@ app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname,'index.html'))
 })
 
-app.post('/merge',upload.array('pdfs', 12), async (req, res, next)=>{
+app.post('/PdfMerger/merge',upload.array('pdfs', 12), async (req, res, next)=>{
     console.log(req.files)
     try{
     if(req.files.length!==2){
