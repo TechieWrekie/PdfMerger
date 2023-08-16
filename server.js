@@ -4,10 +4,11 @@ const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
 const path = require('path')
 const fs =require('fs')
+const cors = require('cors');
 const {pdfmerger} = require('./merge')
 const port = 3000
 app.use('/static', express.static('public'))
-
+app.use(cors());
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something went wrong!');
