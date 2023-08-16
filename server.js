@@ -32,7 +32,7 @@ app.post('/PdfMerger/merge',upload.array('pdfs', 12), async (req, res, next)=>{
     req.files.forEach(file => {
         fs.unlinkSync(file.path);
     });
-    res.redirect(`http://localhost:3000/static/${d}.pdf`)
+    res.redirect(`https://techiewrekie.github.io/PdfMerger/static/${d}.pdf`)
 }catch(error){
     return next(error)
 }
